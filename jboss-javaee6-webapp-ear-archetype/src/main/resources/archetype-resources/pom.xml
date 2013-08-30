@@ -47,17 +47,17 @@
 
         <!-- JBoss dependency versions -->
         
-        <version.jboss.maven.plugin>7.3.Final</version.jboss.maven.plugin>
+        <version.jboss.maven.plugin>7.4.Final</version.jboss.maven.plugin>
 
         <!-- Define the version of the JBoss BOMs we want to import to specify tested stacks. -->
 #if ($enterprise == "true" || $enterprise == "y" || $enterprise == "yes" )
         <!-- Certified version of the JBoss EAP components we want to use -->
         <version.jboss.bom>${jboss-bom-enterprise-version}</version.jboss.bom>
         <!-- Alternatively, comment out the above line, and un-comment the
-            line below to use version 1.0.7.CR8 which is based on community built dependencies. -->
-        <!-- <version.jboss.bom>1.0.7.CR8</version.jboss.bom> -->
+            line below to use version 1.0.7.Final which is based on community built dependencies. -->
+        <!-- <version.jboss.bom>1.0.7.Final</version.jboss.bom> -->
 #else
-        <version.jboss.bom>1.0.7.CR8</version.jboss.bom>
+        <version.jboss.bom>1.0.7.Final</version.jboss.bom>
         <!-- Alternatively, comment out the above line, and un-comment the line
             below to use version ${jboss-bom-enterprise-version} which is a release certified to
             work with JBoss EAP 6. It requires you have access to the JBoss EAP 6
@@ -73,7 +73,6 @@
         <!-- <version.jboss.as>7.2.0.Final-redhat-8</version.jboss.as> -->
 
         <!-- other plugin versions -->
-        <version.compiler.plugin>2.3.1</version.compiler.plugin>
         <version.ear.plugin>2.6</version.ear.plugin>
         <version.ejb.plugin>2.3</version.ejb.plugin>
         <version.surefire.plugin>2.10</version.surefire.plugin>
@@ -136,16 +135,6 @@
     <build>
         <pluginManagement>
             <plugins>
-                <!-- Compiler plugin enforces Java 1.6 compatibility and 
-                    activates annotation processors -->
-                <plugin>
-                    <artifactId>maven-compiler-plugin</artifactId>
-                    <version>${version.compiler.plugin}</version>
-                    <configuration>
-                        <source>${maven.compiler.source}</source>
-                        <target>${maven.compiler.target}</target>
-                    </configuration>
-                </plugin>
                 <!-- The JBoss AS plugin deploys your ear to a local JBoss 
                     AS container -->
                 <!-- Due to Maven's lack of intelligence with EARs we need 
