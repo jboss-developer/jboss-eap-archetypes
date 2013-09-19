@@ -81,7 +81,8 @@
       <directory></directory>
       <includes>
         <include>readme.md</include>
-		<include>README.md</include>
+	      <include>README.md</include>
+        <include>.cheatsheet.*</include>
       </includes>
     </fileSet>
   </fileSets>
