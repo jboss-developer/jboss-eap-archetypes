@@ -32,16 +32,35 @@ Here are the steps in detail:
 
 6. Contribute new code or make changes to existing files. Make sure that you follow the General Guidelines below.
 
-7. Commit your changes to your local topic branch. You must use `git add filename` for every file you create or change.
+7. Build the archetypes and install them into your Maven repository.
+
+        mvn clean install
+
+
+7. Test the changes using Maven.
+
+    1. Navigate to the root of the archetype with the code changes and run `mvn test`.
+    2. The project is created in the `target/` directory of the archteype.
+    3. Verify the generated project builds and runs as expected.
+
+8. Test the changes using JBoss Developer Studio.
+
+    1. In JDBS, choose File` --> `New` --> `Maven Project` and click `Next`.
+    2. Select the Project Name and Location. Do NOT check `Create a simple project (skip archetype selection)`. Click `Next`.
+    3. Choose catalog `Default Local` and check `Include snapshot archetypes`. Select your modified archetype snapshot and click `Next`.
+    4. Enter the groupId, artifactId, and other information, then click 'Finish'.
+    3. Verify the generated project builds and runs as expected.
+
+8. Commit your changes to your local topic branch. You must use `git add filename` for every file you create or change.
 
         git add <changed-filename>
         git commit -m `Description of change...`
 
-8. Push your local topic branch to your github forked repository. This will create a branch on your Git fork repository with the same name as your local topic branch name.
+9. Push your local topic branch to your github forked repository. This will create a branch on your Git fork repository with the same name as your local topic branch name.
 
         git push origin HEAD            
 
-9. Browse to the <topic-branch-name> branch on your forked Git repository and [open a Pull Request](http://help.github.com/send-pull-requests/). Give it a clear title and description.
+10. Browse to the <topic-branch-name> branch on your forked Git repository and [open a Pull Request](http://help.github.com/send-pull-requests/). Give it a clear title and description.
 
 General Guidelines
 ------------------
