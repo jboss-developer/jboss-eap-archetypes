@@ -4,9 +4,9 @@
     <modelVersion>4.0.0</modelVersion>
 
 
-    <groupId>org.jboss.spec.archetypes</groupId>
+    <groupId>org.jboss.archetype</groupId>
     <artifactId>archetypes-test</artifactId>
-    <version>7.1.4-SNAPSHOT</version>
+    <version>6.2.0-build-SNAPSHOT</version>
 
     <name>Archetypes test</name>
 

@@ -15,8 +15,7 @@
     See the License for the specific language governing permissions and
     limitations under the License.
 -->
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>${groupId}</groupId>
@@ -47,20 +46,7 @@
 
         <!-- Define the version of the JBoss BOMs we want to import to specify 
             tested stacks. -->
-#if ($enterprise == "true" || $enterprise == "y" || $enterprise == "yes" )
-        <!-- Certified version of the JBoss EAP components we want to use -->
-        <version.jboss.bom>${jboss-bom-enterprise-version}</version.jboss.bom>
-        <!-- Alternatively, comment out the above line, and un-comment the
-            line below to use version 1.0.7.Final which is based on community built dependencies. -->
-        <!-- <version.jboss.bom>1.0.7.Final</version.jboss.bom> -->
-#else
-        <version.jboss.bom>1.0.7.Final</version.jboss.bom>
-        <!-- Alternatively, comment out the above line, and un-comment the line
-            below to use version ${jboss-bom-enterprise-version} which is a release certified to
-            work with JBoss EAP 6. It requires you have access to the JBoss EAP 6
-            maven repository. -->
-        <!-- <version.jboss.bom>${jboss-bom-enterprise-version}</version.jboss.bom>> -->
-#end
+        <version.jboss.bom.eap>6.2.0-build-5</version.jboss.bom.eap>
 
         <!-- other plugin versions -->
         <version.surefire.plugin>2.10</version.surefire.plugin>
@@ -83,16 +69,16 @@
                 stack you can read this as the JBoss stack of the Java EE 6 APIs, with extras 
                 from the Hibernate family of projects) -->
             <dependency>
-                <groupId>org.jboss.bom</groupId>
+                <groupId>org.jboss.bom.eap</groupId>
                 <artifactId>jboss-javaee-6.0-with-tools</artifactId>
-                <version>${version.jboss.bom}</version>
+                <version>${version.jboss.bom.eap}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
             <dependency>
-                <groupId>org.jboss.bom</groupId>
+                <groupId>org.jboss.bom.eap</groupId>
                 <artifactId>jboss-javaee-6.0-with-hibernate</artifactId>
-                <version>${version.jboss.bom}</version>
+                <version>${version.jboss.bom.eap}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>

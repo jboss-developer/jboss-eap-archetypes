@@ -7,14 +7,8 @@
         <requiredProperty key="name">
             <defaultValue>Java EE 6 HTML5 Mobile Web Application</defaultValue>
         </requiredProperty>
-        <requiredProperty key="enterprise">
-            <defaultValue>false</defaultValue>
-        </requiredProperty>
         <requiredProperty key="tableSuffix">
             <defaultValue>html5mobi</defaultValue>
-        </requiredProperty>
-        <requiredProperty key="jboss-bom-enterprise-version">
-            <defaultValue>1.0.4.Final-redhat-wfk-2</defaultValue>
         </requiredProperty>
     </requiredProperties>
     <fileSets>

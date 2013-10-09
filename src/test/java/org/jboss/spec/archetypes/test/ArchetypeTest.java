@@ -57,8 +57,7 @@ public class ArchetypeTest {
 
                     installArchetype(file, model);
 
-                    executeCreateArchetype(model, false);
-                    executeCreateArchetype(model, true);
+                    executeCreateArchetype(model);
                 } finally {
                     reader.close();
                 }
@@ -94,19 +93,15 @@ public class ArchetypeTest {
      * @throws ComponentLookupException
      * @throws PlexusContainerException
      */
-    private void executeCreateArchetype(Model model, boolean eap) throws Exception {
-        String archetypeWithEnterprise = model + (eap ? " - Enterprise" : "");
-        log.info("Creating project from Archetype: " + archetypeWithEnterprise);
+    private void executeCreateArchetype(Model model) throws Exception {
+        log.info("Creating project from Archetype: " + model);
         String goal = "org.apache.maven.plugins:maven-archetype-plugin:2.2:generate";
         Properties properties = new Properties();
-        if (eap) {
-            properties.put("enterprise", "true");
-        }
         properties.put("archetypeGroupId", model.getGroupId());
         properties.put("archetypeArtifactId", model.getArtifactId());
         properties.put("archetypeVersion", model.getVersion());
         properties.put("groupId", "org.jboss.as.quickstarts");
-        String artifactId = System.currentTimeMillis() + "-" + model.toString().replaceAll("[^a-zA-Z_0-9]", "") + (eap ? "-eap" : "");
+        String artifactId = System.currentTimeMillis() + "-" + model.toString().replaceAll("[^a-zA-Z_0-9]", "");
         properties.put("artifactId", artifactId);
         properties.put("version", "0.0.1-SNAPSHOT");
         Verifier verifier = new org.apache.maven.it.Verifier(outputDir);
@@ -115,7 +110,7 @@ public class ArchetypeTest {
         verifier.setLogFileName(artifactId + "-generate.txt");
         verifier.executeGoal(goal);
 
-        log.info("Building project from Archetype: " + archetypeWithEnterprise);
+        log.info("Building project from Archetype: " + model);
         Verifier buildVerifier = new Verifier(outputDir + File.separator + artifactId);
         buildVerifier.addCliOption("-s " + testOutputDirectory + File.separator + "settings-all.xml");
         buildVerifier.executeGoal("compile"); // buildVerifier log is inside each project

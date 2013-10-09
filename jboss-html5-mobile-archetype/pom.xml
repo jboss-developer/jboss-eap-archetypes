@@ -10,9 +10,9 @@
         <relativePath />
     </parent>
 
-    <groupId>org.jboss.aerogear.archetypes</groupId>
+    <groupId>org.jboss.archetype.wfk</groupId>
     <artifactId>jboss-html5-mobile-archetype</artifactId>
-    <version>7.1.4-SNAPSHOT</version>
+    <version>2.4.0-build-SNAPSHOT</version>
     <packaging>maven-archetype</packaging>
 
     <name>Java EE 6 HTML5 Mobile Web Application</name>
@@ -82,10 +82,10 @@
                 <artifactId>maven-qstools-plugin</artifactId>
                 <version>1.0.0.Final</version>
                 <configuration>
-                    <projectGitRepo>git://github.com/jboss-developer/jboss-eap-quickstarts.git</projectGitRepo>
+                    <projectGitRepo>git://github.com/jboss-developer/jboss-wfk-quickstarts</projectGitRepo>
                     <projectPath>kitchensink-html5-mobile</projectPath>
                     <rootPackage>org.jboss.as.quickstarts.html5_mobile</rootPackage>
-                    <branch>jdf-2.1.7.Final</branch>
+                    <branch>master</branch>
                     <replaceValueWithExpression>
                         <html5mobi>tableSuffix</html5mobi>
                     </replaceValueWithExpression>

@@ -22,12 +22,6 @@
     <requiredProperty key="name">
       <defaultValue>Java EE 6 webapp project</defaultValue>
     </requiredProperty>
-    <requiredProperty key="enterprise">
-      <defaultValue>false</defaultValue>
-    </requiredProperty>
-    <requiredProperty key="jboss-bom-enterprise-version">
-      <defaultValue>1.0.4.Final-redhat-4</defaultValue>
-    </requiredProperty>
   </requiredProperties>
   <fileSets>
     <fileSet encoding="UTF-8">

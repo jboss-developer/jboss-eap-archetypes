@@ -10,14 +10,14 @@
         <relativePath />
     </parent>
 
-    <groupId>org.jboss.spec.archetypes</groupId>
+    <groupId>org.jboss.archetype.eap</groupId>
     <artifactId>jboss-javaee6-webapp-archetype</artifactId>
-    <version>7.1.4-SNAPSHOT</version>
+    <version>6.2.0-build-SNAPSHOT</version>
     <packaging>maven-archetype</packaging>
 
     <name>Java EE 6 Webapp</name>
 
-    <description>An archetype that generates a starter Java EE 6 webapp project for JBoss AS 7.1 (by default) or EAP 6 (if the "enterprise" property is true)</description>
+    <description>An archetype that generates a starter Java EE 6 webapp project for JBoss EAP 6</description>
 
     <url>http://jboss.org/jbossas</url>
 
@@ -86,9 +86,9 @@
                     <projectGitRepo>git://github.com/jboss-developer/jboss-eap-quickstarts.git</projectGitRepo>
                     <projectPath>kitchensink</projectPath>
                     <rootPackage>org.jboss.as.quickstarts.kitchensink</rootPackage>
-                    <branch>jdf-2.1.7.Final</branch>
+                    <branch>master</branch>
                     <archetypeExpressionReplaceValues>
-                        <archetypeExpressionReplaceValue>jboss-as-kitchensink</archetypeExpressionReplaceValue>
+                        <archetypeExpressionReplaceValue>jboss-kitchensink</archetypeExpressionReplaceValue>
                         <archetypeExpressionReplaceValue>kitchensink-quickstart</archetypeExpressionReplaceValue>
                         <archetypeExpressionReplaceValue>KitchensinkQuickstart</archetypeExpressionReplaceValue>
                         <archetypeExpressionReplaceValue>JBoss EAP Quickstart: kitchensink</archetypeExpressionReplaceValue>

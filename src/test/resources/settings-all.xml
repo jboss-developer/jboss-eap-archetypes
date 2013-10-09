@@ -33,6 +33,16 @@
                         <enabled>false</enabled>
                     </snapshots>
                 </repository>
+                <repository>
+                    <id>jboss-developer-staging-repo</id>
+                    <url>http://jboss-developer.github.io/temp-maven-repo/</url>
+                    <releases>
+                        <enabled>true</enabled>
+                    </releases>
+                    <snapshots>
+                        <enabled>false</enabled>
+                    </snapshots>
+                </repository>
             </repositories>
             <pluginRepositories>
                 <pluginRepository>
