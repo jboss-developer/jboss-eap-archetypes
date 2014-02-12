@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.jboss.archetype.wfk</groupId>
+    <artifactId>jboss-spring-mvc-archetype</artifactId>
+    <version>2.5.0-build-SNAPSHOT</version>
+    <packaging>maven-archetype</packaging>
+
+    <name>Spring MVC Application</name>
+   <description>An archetype that generates a starter Spring MVC application with Java EE persistence settings (server bootstrapped JPA, JTA transaction management) for JBoss AS7</description>
+   
+    <url>http://jboss.org/jbossas</url>
+
+    <scm>
+        <connection>scm:git:git@github.com:jboss-eap/wfk-archetypes.git</connection>
+        <developerConnection>scm:git:git@github.com:jboss-eap/wfk-archetypes.git</developerConnection>
+        <url>scm:git:git@github.com:jboss-eap/wfk-archetypes.git</url>
+    </scm>
+
+    <developers>
+        <developer>
+            <name>Marius Bogoevici</name>
+            <email>mariusb@redhat.com</email>
+            <organization>Red Hat, Inc.</organization>
+            <organizationUrl>http://redhat.com/jboss</organizationUrl>
+        </developer>
+        <developer>
+            <name>Karel Piwko</name>
+            <email>kpiwko@redhat.com</email>
+            <organization>Red Hat, Inc.</organization>
+            <organizationUrl>http://redhat.com/jboss</organizationUrl>
+        </developer>
+    </developers>
+    
+    <licenses>
+        <license>
+            <name>The Apache Software License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <build>
+       <testResources>
+        <testResource>
+          <directory>src/test/resources</directory>
+          <filtering>true</filtering>
+        </testResource>
+       </testResources>
+
+       <extensions>
+            <extension>
+                <groupId>org.apache.maven.archetype</groupId>
+                <artifactId>archetype-packaging</artifactId>
+                <version>2.1</version>
+            </extension>
+        </extensions>
+
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <artifactId>maven-archetype-plugin</artifactId>
+                    <version>2.2</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+        
+
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>2.1.2</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+   
+    <profiles>
+        <profile>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.jboss.maven.plugins</groupId>
+                        <artifactId>maven-qstools-plugin</artifactId>
+                        <version>1.4.0.CR2</version>
+                        <configuration>
+                            <projectGitRepo>git://github.com/jboss-developer/jboss-wfk-quickstarts</projectGitRepo>
+                            <projectPath>spring-kitchensink-basic</projectPath>
+                            <rootPackage>org.jboss.as.quickstarts.kitchensink.spring.basic</rootPackage>
+                            <branch>2.5.x-develop</branch>
+                            <applyPatch>jboss-repositories-spring.diff</applyPatch>
+                            <archetypeExpressionReplaceValues>
+                                <archetypeExpressionReplaceValue>spring-kitchensink-basic</archetypeExpressionReplaceValue>
+                                <archetypeExpressionReplaceValue>JBoss WFK Quickstart: spring-kitchensink-basic</archetypeExpressionReplaceValue>
+                                <archetypeExpressionReplaceValue>spring-quickstart</archetypeExpressionReplaceValue>
+                                <archetypeExpressionReplaceValue>SpringQuickstart</archetypeExpressionReplaceValue>
+                            </archetypeExpressionReplaceValues>
+                        </configuration>
+                        <executions>
+                            <execution>
+                                <phase>generate-sources</phase>
+                                <goals>
+                                    <goal>archetypeSync</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+</project>
