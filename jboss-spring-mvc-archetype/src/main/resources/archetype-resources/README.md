@@ -1,3 +1,6 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
 ${artifactId}: Kitchensink Example using Spring 4.0
 ==============================================================
 Author: Marius Bogoevici, Tejas Mehta, Joshua Wilson  
@@ -79,13 +82,13 @@ for complete instructions and additional options._
 
         mvn clean install jboss-as:deploy
 
-4. This will deploy `target/jboss-${artifactId}.war` to the running instance of the server.
+4. This will deploy `target/${artifactId}.war` to the running instance of the server.
 
 
 Access the application
 ----------------------
 
-The application will be running at the following URL: <http://localhost:8080/jboss-${artifactId}/>.
+The application will be running at the following URL: <http://localhost:8080/${artifactId}/>.
 
 
 Undeploy the Archive

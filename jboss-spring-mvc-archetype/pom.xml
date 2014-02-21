@@ -94,7 +94,7 @@
                     <plugin>
                         <groupId>org.jboss.maven.plugins</groupId>
                         <artifactId>maven-qstools-plugin</artifactId>
-                        <version>1.4.0.CR2</version>
+                        <version>1.4.0.CR3</version>
                         <configuration>
                             <projectGitRepo>git://github.com/jboss-developer/jboss-wfk-quickstarts</projectGitRepo>
                             <projectPath>spring-kitchensink-basic</projectPath>
@@ -102,6 +102,7 @@
                             <branch>2.5.x-develop</branch>
                             <applyPatch>jboss-repositories-spring.diff</applyPatch>
                             <archetypeExpressionReplaceValues>
+                                <archetypeExpressionReplaceValue>jboss-spring-kitchensink-basic</archetypeExpressionReplaceValue>
                                 <archetypeExpressionReplaceValue>spring-kitchensink-basic</archetypeExpressionReplaceValue>
                                 <archetypeExpressionReplaceValue>JBoss WFK Quickstart: spring-kitchensink-basic</archetypeExpressionReplaceValue>
                                 <archetypeExpressionReplaceValue>spring-quickstart</archetypeExpressionReplaceValue>

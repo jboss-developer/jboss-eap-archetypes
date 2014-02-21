@@ -1,6 +1,9 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
 /*
  * JBoss, Home of Professional Open Source
- * Copyright 2013, Red Hat, Inc. and/or its affiliates, and individual
+ * Copyright 2014, Red Hat, Inc. and/or its affiliates, and individual
  * contributors by the @authors tag. See the copyright.txt in the
  * distribution for a full listing of individual contributors.
  *
@@ -31,7 +34,7 @@ public class Deployments {
     /**
      * Specifies relative path to the war of built application in the main project.
      */
-    private static final String KITCHENSINK = "../target/jboss-${artifactId}.war";
+    private static final String KITCHENSINK = "../target/${artifactId}.war";
 
     /**
      * Creates deployment which is sent to the container upon test's start.
