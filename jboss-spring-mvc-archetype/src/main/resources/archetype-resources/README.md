@@ -1,6 +1,3 @@
-#set( $symbol_pound = '#' )
-#set( $symbol_dollar = '$' )
-#set( $symbol_escape = '\' )
 ${artifactId}: Kitchensink Example using Spring 4.0
 ==============================================================
 Author: Marius Bogoevici, Tejas Mehta, Joshua Wilson  

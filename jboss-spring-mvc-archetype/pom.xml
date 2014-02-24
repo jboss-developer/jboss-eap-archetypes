@@ -94,7 +94,7 @@
                     <plugin>
                         <groupId>org.jboss.maven.plugins</groupId>
                         <artifactId>maven-qstools-plugin</artifactId>
-                        <version>1.4.0.CR3</version>
+                        <version>1.4.0.CR2</version>
                         <configuration>
                             <projectGitRepo>git://github.com/jboss-developer/jboss-wfk-quickstarts</projectGitRepo>
                             <projectPath>spring-kitchensink-basic</projectPath>

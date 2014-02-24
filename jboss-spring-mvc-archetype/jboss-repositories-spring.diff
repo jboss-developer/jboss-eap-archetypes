@@ -1,6 +1,6 @@
 --- a/jboss-spring-mvc-archetype/src/main/resources/archetype-resources/pom.xml
 +++ b/jboss-spring-mvc-archetype/src/main/resources/archetype-resources/pom.xml
-@@ -349,5 +349,24 @@
+@@ -346,5 +346,24 @@
                  </plugins>
              </build>
          </profile>
