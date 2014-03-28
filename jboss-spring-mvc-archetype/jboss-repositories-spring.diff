@@ -1,6 +1,6 @@
 --- a/jboss-spring-mvc-archetype/src/main/resources/archetype-resources/pom.xml
 +++ b/jboss-spring-mvc-archetype/src/main/resources/archetype-resources/pom.xml
-@@ -343,5 +343,20 @@
+@@ -343,5 +343,24 @@
                  </plugins>
              </build>
          </profile>
@@ -17,6 +17,10 @@
 +                    <id>jboss-products-ga-repo</id>
 +                    <url>http://maven.repository.redhat.com/techpreview/all/</url>
 +                </repository>
++                <repository>
++                    <id>jboss-developer-repo</id>
++                    <url>http://jboss-developer.github.io/temp-maven-repo/</url>
++                </repository>
 +            </repositories>
 +        </profile>
      </profiles>
@@ -25,7 +29,7 @@ diff --git a/jboss-spring-mvc-archetype/src/main/resources/archetype-resources/f
 index db3e8cd..0ac046e 100644
 --- a/jboss-spring-mvc-archetype/src/main/resources/archetype-resources/functional-tests/pom.xml
 +++ b/jboss-spring-mvc-archetype/src/main/resources/archetype-resources/functional-tests/pom.xml
-@@ -131,6 +131,23 @@
+@@ -131,6 +131,27 @@
                  </dependency>
              </dependencies>
          </profile>
@@ -42,6 +46,10 @@ index db3e8cd..0ac046e 100644
 +                <repository>
 +                    <id>jboss-products-ga-repo</id>
 +                    <url>http://maven.repository.redhat.com/techpreview/all/</url>
++                </repository>
++                <repository>
++                    <id>jboss-developer-repo</id>
++                    <url>http://jboss-developer.github.io/temp-maven-repo/</url>
 +                </repository>
 +            </repositories>
 +        </profile>

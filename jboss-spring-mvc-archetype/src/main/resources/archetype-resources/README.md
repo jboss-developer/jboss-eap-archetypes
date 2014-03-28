@@ -62,8 +62,8 @@ Start the JBoss EAP Server
 1. Open a command line and navigate to the root of the JBoss EAP directory.
 2. The following shows the command line to start the server:
 
-        For Linux:   JBOSS_HOME/bin/standalone.sh
-        For Windows: JBOSS_HOME\bin\standalone.bat
+        For Linux:   EAP_HOME/bin/standalone.sh
+        For Windows: EAP_HOME\bin\standalone.bat
 
  
 Build and Deploy the Quickstart
@@ -139,10 +139,10 @@ with Eclipse, you will see some errors. The following lists the errors and how t
     *  Please ignore this error as it is due to a problem in the schema definition.  
 2.  `Console configuration "" does not exist.`
     1.  Select the project 
-    2.  Select the `Project` menu, then `Properties` -> `Hibernate Settings`
+    2.  Select the `Project` menu, then `Properties` -&gt; `Hibernate Settings`
         1.  Look in the combo-box below the "Default Hibernate Console configuration:" label and select a console configuration. 
         2.  If no console configuration exists then Cancel and do the following.
-            1.  Select `Run` -> `Run Configurations` 
+            1.  Select `Run` -&gt; `Run Configurations` 
             2.  Under `Hibernate Console Configuration` create a new Configuration
             3.  Enter the project name as the Name
             4.  In the "Database connection:" combo-box select "[JPA Project Configured Connection]"
