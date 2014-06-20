@@ -15,8 +15,7 @@
     See the License for the specific language governing permissions and
     limitations under the License.
 -->
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>${groupId}</groupId>
@@ -45,7 +44,7 @@
         <version.jboss.maven.plugin>7.4.Final</version.jboss.maven.plugin>
 
         <!-- Define the version of the JBoss BOMs we want to import. The JBoss BOMs specify tested stacks. -->
-        <version.jboss.bom.wfk>2.5.0-build-5</version.jboss.bom.wfk>
+        <version.jboss.bom.wfk>2.6.0-redhat-1</version.jboss.bom.wfk>
 
         <!-- other plugin versions -->
         <version.surefire.plugin>2.10</version.surefire.plugin>
@@ -94,6 +93,12 @@
         </dependency>
 
         <dependency>
+            <groupId>org.jboss.arquillian.protocol</groupId>
+            <artifactId>arquillian-protocol-servlet</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <scope>test</scope>
@@ -131,8 +136,7 @@
                 </dependency>
             </dependencies>
         </profile>
-
-        <!-- Activate JBoss Product Maven repository -->
+         <!-- Activate JBoss Product Maven repository -->
         <profile>
             <id>jboss-product-repository</id>
             <activation>
@@ -150,8 +154,7 @@
                     <url>http://jboss-developer.github.io/temp-maven-repo/</url>
                 </repository>
             </repositories>
-        </profile>
-
+		</profile>
     </profiles>
 
 </project>
