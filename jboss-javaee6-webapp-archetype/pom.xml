@@ -12,7 +12,7 @@
 
     <groupId>org.jboss.archetype.eap</groupId>
     <artifactId>jboss-javaee6-webapp-archetype</artifactId>
-    <version>6.2.0-build-SNAPSHOT</version>
+    <version>6.3.0-build-SNAPSHOT</version>
     <packaging>maven-archetype</packaging>
 
     <name>Java EE 6 Webapp</name>
@@ -95,7 +95,7 @@
                             <projectGitRepo>git://github.com/jboss-developer/jboss-eap-quickstarts.git</projectGitRepo>
                             <projectPath>kitchensink</projectPath>
                             <rootPackage>org.jboss.as.quickstarts.kitchensink</rootPackage>
-                            <branch>origin/6.2.x-develop</branch>
+                            <branch>origin/6.3.x-develop</branch>
                             <applyPatch>jboss-repositories-webapp.diff</applyPatch>
                             <archetypeExpressionReplaceValues>
                                 <archetypeExpressionReplaceValue>jboss-kitchensink</archetypeExpressionReplaceValue>
