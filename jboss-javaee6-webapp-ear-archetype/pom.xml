@@ -18,7 +18,7 @@
 
     <groupId>org.jboss.archetype.eap</groupId>
     <artifactId>jboss-javaee6-webapp-ear-archetype</artifactId>
-    <version>6.3.0.GA</version>
+    <version>6.4.0-build-SNAPSHOT</version>
     <packaging>maven-archetype</packaging>
 
     <name>Java EE 6 EAR Webapp</name>
@@ -107,7 +107,7 @@
                             <projectPath>kitchensink-ear</projectPath>
                             <rootPackage>org.jboss.as.quickstarts.kitchensink_ear</rootPackage>
                             <multiModuleProject>true</multiModuleProject>
-                            <branch>tags/6.3.0.GA</branch>
+                            <branch>tags/6.4.0-build-SNAPSHOT</branch>
                             <applyPatch>jboss-repositories-ear.diff</applyPatch>
                             <archetypeExpressionReplaceValues>
                                 <archetypeExpressionReplaceValue>jboss-kitchensink-ear</archetypeExpressionReplaceValue>
