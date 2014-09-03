@@ -107,7 +107,7 @@
                             <projectPath>kitchensink-ear</projectPath>
                             <rootPackage>org.jboss.as.quickstarts.kitchensink_ear</rootPackage>
                             <multiModuleProject>true</multiModuleProject>
-                            <branch>origin/6.3.x-develop</branch>
+                            <branch>tags/6.3.0.GA</branch>
                             <applyPatch>jboss-repositories-ear.diff</applyPatch>
                             <archetypeExpressionReplaceValues>
                                 <archetypeExpressionReplaceValue>jboss-kitchensink-ear</archetypeExpressionReplaceValue>
