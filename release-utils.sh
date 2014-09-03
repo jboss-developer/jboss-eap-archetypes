@@ -6,10 +6,6 @@ SOURCE="${BASH_SOURCE[0]}"
 while [ -h "$SOURCE" ] ; do SOURCE="$(readlink "$SOURCE")"; done
 DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
 
-if [[ -z "$RELEASE_REPO_URL" ]]; then
-  echo "You must set the RELEASE_REPO_URL environment variable to your local checkout of https://github.com/jboss-developer/temp-maven-repo"
-  exit
-fi
 # DEFINE
 
 ARCHETYPES="jboss-javaee6-webapp-archetype jboss-javaee6-webapp-blank-archetype jboss-javaee6-webapp-ear-archetype  jboss-javaee6-webapp-ear-blank-archetype"
@@ -17,6 +13,13 @@ ARCHETYPES="jboss-javaee6-webapp-archetype jboss-javaee6-webapp-blank-archetype 
 SNAPSHOT_REPO_ID="jboss-snapshots-repository"
 RELEASE_REPO_ID="jboss-releases-repository"
 # SCRIPT
+
+useenvrepo(){
+  if [[ -z "$RELEASE_REPO_URL" ]]; then
+    echo "You must set the RELEASE_REPO_URL environment variable to your local checkout of https://github.com/jboss-developer/temp-maven-repo"
+    exit
+  fi
+}
 
 usage()
 {
@@ -99,6 +102,10 @@ snapshot()
 
 release()
 {
+  if [[ -z "$USE_STAGE" ]]
+     then
+       useenvrepo
+     fi 
    for archetype in $ARCHETYPES
    do
       echo "\n**** Deploying $archetype to ${RELEASE_REPO_URL} \n"
