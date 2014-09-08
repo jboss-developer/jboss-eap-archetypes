@@ -68,7 +68,7 @@ index 41a4b55..620efc4 100644
 +            </activation>
 +            <repositories>
 +                <repository>
-+                    <id>jboss-products-ga-repo</id>
++                    <id>redhat-techpreview-all-repository</id>
 +                    <url>http://maven.repository.redhat.com/techpreview/all/</url>
 +                </repository>
 +            </repositories>
