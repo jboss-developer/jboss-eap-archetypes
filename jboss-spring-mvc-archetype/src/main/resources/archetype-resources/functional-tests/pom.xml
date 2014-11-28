@@ -146,7 +146,7 @@
             </activation>
             <repositories>
                 <repository>
-                    <id>jboss-products-ga-repo</id>
+                    <id>redhat-techpreview-all-repository</id>
                     <url>http://maven.repository.redhat.com/techpreview/all/</url>
                 </repository>
                 <repository>
