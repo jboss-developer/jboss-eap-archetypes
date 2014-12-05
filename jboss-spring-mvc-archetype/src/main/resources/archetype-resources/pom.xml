@@ -17,16 +17,14 @@
 -->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
     <groupId>${groupId}</groupId>
     <artifactId>${artifactId}</artifactId>
     <version>${version}</version>
     <packaging>war</packaging>
-
     <name>JBoss WFK Quickstart: ${artifactId}</name>
     <description>Getting Started with Spring 4.0 on JBoss</description>
-
     <url>http://jboss.org/jbossas</url>
+
     <licenses>
         <license>
             <name>Apache License, Version 2.0</name>
@@ -34,6 +32,43 @@
             <url>http://www.apache.org/licenses/LICENSE-2.0.html</url>
         </license>
     </licenses>
+
+    <!-- Activate JBoss Product Maven repository.
+
+        NOTE: Configuring the Maven repository in the pom.xml file is not a recommended procedure
+        and is only done here to make it easier to use the quickstarts.
+
+        For more information about how to configure Maven for your application,
+        see the section entitled 'Use the Maven Repository'
+        in the Development Guide for JBoss EAP 6 located here:
+
+        https://access.redhat.com/documentation/en-US/JBoss_Enterprise_Application_Platform/6.3/html-single/Development_Guide
+    -->
+    <repositories>
+        <repository>
+            <id>redhat-techpreview-all-repository</id>
+            <url>https://maven.repository.redhat.com/techpreview/all/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+
+    <pluginRepositories>
+        <pluginRepository>
+            <id>redhat-techpreview-all-repository</id>
+            <url>https://maven.repository.redhat.com/techpreview/all/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </pluginRepository>
+    </pluginRepositories>
 
     <properties>
         <!-- Explicitly declaring the source encoding eliminates the following
@@ -46,8 +81,8 @@
         <version.jboss.maven.plugin>7.4.Final</version.jboss.maven.plugin>
 
         <!-- Define the version of the JBoss BOMs we want to import to specify tested stacks. -->
-        <version.jboss.bom.wfk>2.6.0-redhat-1</version.jboss.bom.wfk>
-        <version.jboss.bom.eap>6.2.3.GA</version.jboss.bom.eap>
+        <version.jboss.bom.wfk>2.7.0-redhat-1</version.jboss.bom.wfk>
+        <version.jboss.bom.eap>6.3.2.GA</version.jboss.bom.eap>
 
         <!-- maven-compiler-plugin -->
         <maven.compiler.source>1.6</maven.compiler.source>
@@ -76,7 +111,7 @@
                 from the Hibernate family of projects) -->
             <dependency>
                 <groupId>org.jboss.bom.wfk</groupId>
-                <artifactId>jboss-javaee-6.0-with-spring4</artifactId>
+                <artifactId>jboss-javaee-6.0-with-spring4.1</artifactId>
                 <version>${version.jboss.bom.wfk}</version>
                 <type>pom</type>
                 <scope>import</scope>
@@ -322,6 +357,7 @@
             </plugin>
         </plugins>
     </build>
+
     <profiles>
         <profile>
             <!-- When built in OpenShift the 'openshift' profile will be used when invoking mvn. -->
@@ -342,24 +378,5 @@
                 </plugins>
             </build>
         </profile>
-        <!-- Activate JBoss Product Maven repository -->
-        <profile>
-            <id>jboss-product-repository</id>
-            <activation>
-                <property>
-                    <name>!jboss-product-repository</name>
-                </property>
-            </activation>
-            <repositories>
-                <repository>
-                    <id>redhat-techpreview-all-repository</id>
-                    <url>http://maven.repository.redhat.com/techpreview/all/</url>
-                </repository>
-                <repository>
-                    <id>jboss-developer-repo</id>
-                    <url>http://jboss-developer.github.io/temp-maven-repo/</url>
-                </repository>
-            </repositories>
-		</profile>
     </profiles>
 </project>

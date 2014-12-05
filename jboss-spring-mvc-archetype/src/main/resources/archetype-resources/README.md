@@ -1,20 +1,17 @@
-${artifactId}: Kitchensink Example using Spring 4.0
+${artifactId}: Kitchensink Example using Spring 4.x
 ==============================================================
 Author: Marius Bogoevici, Tejas Mehta, Joshua Wilson  
 Level: Intermediate  
 Technologies: JSP, JPA, JSON, Spring, JUnit  
-Summary: An example that incorporates multiple technologies  
+Summary: The `${artifactId}` quickstart is an example of a Java EE 6 application using JSP, JPA 2.0 and Spring 4.x.  
 Target Product: WFK  
-Product Versions: EAP 6.1, EAP 6.2, WFK 2.6  
+Product Versions: EAP 6.1, EAP 6.2, EAP 6.3, WFK 2.7  
 Source: <https://github.com/jboss-developer/jboss-wfk-quickstarts/>  
 
 What is it?
 -----------
 
-This is your project! It is a sample, deployable Maven 3 project to help you get your foot in the door developing with 
-Java EE 6 and Spring on Red Hat JBoss Enterprise Application Platform 6.1 or later.
-
-This project is setup to allow you to create a compliant Java EE 6 application using JSP, JPA 2.0 and Spring 4.0. It 
+The `${artifactId}` quickstart is an example of a Java EE 6 application using JSP, JPA 2.0 and Spring 4.x. It 
 includes a persistence unit and some sample persistence and transaction code to introduce you to database access in enterprise Java:
 
 * In `jboss-as-spring-mvc-context.xml` `<context:component-scan base-package="${package}.controller"/>` 
@@ -31,7 +28,7 @@ System Requirements
 -------------------
 
 The application this project produces is designed to be run on Red Hat JBoss Enterprise Application Platform (EAP) 6.1 or 
-later with the Red Hat JBoss Web Framework Kit (WFK) 2.6.
+later with the Red Hat JBoss Web Framework Kit (WFK) 2.7.
 
 To run the quickstart with the provided build script, you need the following:
 
@@ -128,26 +125,6 @@ Run the Quickstart in JBoss Developer Studio or Eclipse
 
 You can also start the server and deploy the quickstart from Eclipse using JBoss tools. For more information, see 
 [Use JBoss Developer Studio or Eclipse to Run the Quickstart](../README.md#use-jboss-developer-studio-or-eclipse-to-run-the-quickstarts)
-
-
-Resolve ERRORs in JBDS/Eclipse
---------------------------------
-If you only build with Maven command line, you should not see any errors. However, if you `Build` or `Build Automatically` 
-with Eclipse, you will see some errors. The following lists the errors and how to fix them.
- 
-1.  `cvc-complex-type.2.4.a: Invalid content was found starting with element 'deployment'. One of '{ear-subdeployments-isolated, deployment, sub-deployment, module}' is expected.`
-    *  Please ignore this error as it is due to a problem in the schema definition.  
-2.  `Console configuration "" does not exist.`
-    1.  Select the project 
-    2.  Select the `Project` menu, then `Properties` -&gt; `Hibernate Settings`
-        1.  Look in the combo-box below the "Default Hibernate Console configuration:" label and select a console configuration. 
-        2.  If no console configuration exists then Cancel and do the following.
-            1.  Select `Run` -&gt; `Run Configurations` 
-            2.  Under `Hibernate Console Configuration` create a new Configuration
-            3.  Enter the project name as the Name
-            4.  In the "Database connection:" combo-box select "[JPA Project Configured Connection]"
-            5.  Select `Apply`
-            6.  Return to step 1 to select the configuration you just created.
 
 
 Debug the Application
