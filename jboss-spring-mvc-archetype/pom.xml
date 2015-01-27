@@ -99,7 +99,7 @@
                             <projectGitRepo>git://github.com/jboss-developer/jboss-wfk-quickstarts</projectGitRepo>
                             <projectPath>spring-kitchensink-basic</projectPath>
                             <rootPackage>org.jboss.as.quickstarts.kitchensink.spring.basic</rootPackage>
-                            <branch>94eae84983b3078092b706f3c891d024b32a4195</branch>
+                            <branch>3b63ce3a7a3dfddd9b1456a73f6a5c8b2c83e9de</branch>
                             <archetypeExpressionReplaceValues>
                                 <archetypeExpressionReplaceValue>jboss-spring-kitchensink-basic</archetypeExpressionReplaceValue>
                                 <archetypeExpressionReplaceValue>spring-kitchensink-basic</archetypeExpressionReplaceValue>
