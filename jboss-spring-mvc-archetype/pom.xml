@@ -105,6 +105,7 @@
                                 <archetypeExpressionReplaceValue>spring-kitchensink-basic</archetypeExpressionReplaceValue>
                                 <archetypeExpressionReplaceValue>JBoss WFK Quickstart: spring-kitchensink-basic</archetypeExpressionReplaceValue>
                                 <archetypeExpressionReplaceValue>spring-quickstart</archetypeExpressionReplaceValue>
+                                <archetypeExpressionReplaceValue>kitchensink-quickstart</archetypeExpressionReplaceValue>
                                 <archetypeExpressionReplaceValue>SpringQuickstart</archetypeExpressionReplaceValue>
                             </archetypeExpressionReplaceValues>
                         </configuration>
