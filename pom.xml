@@ -6,7 +6,7 @@
 
     <groupId>org.jboss.archetype</groupId>
     <artifactId>eap-archetypes-test</artifactId>
-    <version>6.4.0-build-SNAPSHOT</version>
+    <version>6.4.0.GA</version>
 
     <name>Archetypes test</name>
 

@@ -12,7 +12,7 @@
 
     <groupId>org.jboss.archetype.eap</groupId>
     <artifactId>jboss-javaee6-webapp-archetype</artifactId>
-    <version>6.4.0-build-SNAPSHOT</version>
+    <version>6.4.0.GA</version>
     <packaging>maven-archetype</packaging>
 
     <name>Java EE 6 Webapp</name>
