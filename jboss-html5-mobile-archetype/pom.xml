@@ -6,17 +6,17 @@
    <parent>
       <groupId>org.jboss</groupId>
       <artifactId>jboss-parent</artifactId>
-      <version>6-beta-2</version>
+      <version>19</version>
    </parent>
 
-   <groupId>org.jboss.aerogear.archetypes</groupId>
+   <groupId>org.jboss.archetype.eap</groupId>
    <artifactId>jboss-html5-mobile-archetype</artifactId>
-   <version>1.0.0.M2c</version>
+   <version>7.0.0-build-SNAPSHOT</version>
    <packaging>maven-archetype</packaging>
 
-   <name>Java EE 6 HTML5 Mobile Web Application</name>
+   <name>Java EE 7 HTML5 Mobile Web Application</name>
 
-   <description>An archetype that generates a Java EE 6 application using HTML5, and JAX-RS to support both desktop and mobile web browsers</description>
+   <description>An archetype that generates a Java EE 7 application using HTML5, and JAX-RS to support both desktop and mobile web browsers</description>
 
    <url>http://jboss.org/jbossas</url>
 
@@ -55,6 +55,15 @@
          <organizationUrl>http://redhat.com/jboss</organizationUrl>
          <url>http://in.relation.to/Bloggers/Jay</url>
       </developer>
+      <developer>
+          <id>rafabene</id>
+          <name>Rafael Benevides</name>
+          <email>benevides@redhat.com</email>
+          <organization>Red Hat, Inc.</organization>
+          <organizationUrl>http://redhat.com/jboss</organizationUrl>
+          <url>https://community.jboss.org/people/rafabene</url>
+          <timezone>-4</timezone>
+      </developer>
    </developers>
 
    <build>
@@ -62,7 +71,7 @@
          <extension>
             <groupId>org.apache.maven.archetype</groupId>
             <artifactId>archetype-packaging</artifactId>
-            <version>2.1</version>
+            <version>2.3</version>
          </extension>
       </extensions>
 
@@ -70,11 +79,59 @@
          <plugins>
             <plugin>
                <artifactId>maven-archetype-plugin</artifactId>
-               <version>2.1</version>
+               <version>2.3</version>
                <extensions>true</extensions>
             </plugin>
          </plugins>
       </pluginManagement>
    </build>
-
+   <profiles>
+           <profile>
+               <activation>
+                   <activeByDefault>true</activeByDefault>
+               </activation>
+               <build>
+                   <plugins>
+                       <plugin>
+                           <groupId>org.jboss.maven.plugins</groupId>
+                           <artifactId>qstools</artifactId>
+                           <version>1.6.1.Final</version>
+                           <configuration>
+                               <projectGitRepo>https://github.com/jboss-developer/jboss-wfk-quickstarts.git</projectGitRepo>
+                               <projectPath>kitchensink-html5-mobile</projectPath>
+                               <rootPackage>org.jboss.as.quickstarts.html5_mobile</rootPackage>
+                               <branch>12d82ed82656d1f5a17c679d3e38e3234692107d</branch>
+                               <replaceValueWithExpression>
+                                   <html5mobi>tableSuffix</html5mobi>
+                               </replaceValueWithExpression>
+                               <applyPatch>cheatsheet.diff</applyPatch>;
+                               <ignoredArchetypeExpressionReplaceValues>
+                                   <ignoredArchetypeExpressionReplaceValue>http://www.jboss.org/jdf/quickstarts/jboss-as-quickstart/wfk-quickstarts/</ignoredArchetypeExpressionReplaceValue>
+                               </ignoredArchetypeExpressionReplaceValues>
+                               <archetypeExpressionReplaceValues>
+                                   <archetypeExpressionReplaceValue>jboss-as-kitchensink-html5-mobile</archetypeExpressionReplaceValue>
+                                   <archetypeExpressionReplaceValue>jboss-kitchensink-html5-mobile</archetypeExpressionReplaceValue>
+                                   <archetypeExpressionReplaceValue>JBoss WFK Quickstart: kitchensink-html5-mobile</archetypeExpressionReplaceValue>
+                                   <archetypeExpressionReplaceValue>KitchensinkHTML5MobileQuickstart</archetypeExpressionReplaceValue>
+                                   <archetypeExpressionReplaceValue>KitchensinkHTML5Mobile</archetypeExpressionReplaceValue>
+                                   <archetypeExpressionReplaceValue>kitchensink-html5-mobile-quickstart</archetypeExpressionReplaceValue>
+                                   <archetypeExpressionReplaceValue>kitchensink-quickstart</archetypeExpressionReplaceValue>
+                                   <archetypeExpressionReplaceValue>kitchensink-html5-mobile</archetypeExpressionReplaceValue>
+                                   <archetypeExpressionReplaceValue>Kitchensink</archetypeExpressionReplaceValue>
+                                   <archetypeExpressionReplaceValue>kitchensink</archetypeExpressionReplaceValue>
+                               </archetypeExpressionReplaceValues>
+                           </configuration>
+                           <executions>
+                               <execution>
+                                   <phase>generate-sources</phase>
+                                   <goals>
+                                       <goal>archetypeSync</goal>
+                                   </goals>
+                               </execution>
+                           </executions>
+                       </plugin>
+                   </plugins>
+               </build>
+           </profile>
+         </profiles>
 </project>

@@ -1,8 +1,8 @@
-/**
+/*
  * JBoss, Home of Professional Open Source
- * Copyright 2012, Red Hat, Inc., and individual contributors
- * by the @authors tag. See the copyright.txt in the distribution for a
- * full listing of individual contributors.
+ * Copyright 2014, Red Hat, Inc. and/or its affiliates, and individual
+ * contributors by the @authors tag. See the copyright.txt in the
+ * distribution for a full listing of individual contributors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,75 +18,22 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: #F1F1F1;
-    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
-    font-size: 0.8em;
     color: #363636;
-    text-align: center;
+    font-family: Verdana, sans-serif;
 }
 
-#container {
-    text-align: left;
-    margin: 0 auto;
-    padding: 0 20px 10px 20px;
-    border-top: 5px solid #000000;
-    border-left: 5px solid #8c8f91;
-    border-right: 5px solid #8c8f91;
-    border-bottom: 25px solid #8c8f91;
-    width: 865px; /* subtract 40px from banner width for padding */
-    background: #FFFFFF;
-    background-image: url(../img/headerbkg.png);
-    background-repeat: repeat-x;
-    padding-top: 30px;
-    box-shadow: 3px 3px 15px #d5d5d5;
+p {
+    margin-left: 8px;
+    margin-right: 8px;
 }
 
-section {
-    float: left;
-    width: 500px;
-    margin: 20px;
-}
-
-aside {
-    font-size: 0.9em;
-    width: 245px;
-    float: right;
-    margin: 20px 0;
-    border: 1px solid #D5D5D5;
-    background: #F1F1F1;
-    background-image: url(../img/asidebkg.png);
-    background-repeat: repeat-x;
-    padding: 20px;
-}
-
-aside ul {
-    padding-left: 20px;
-}
-
-.dualbrand {
-    float: right;
-    padding-right: 10px;
-}
-
-.logo {
-    float: left;
-    padding-left: 10px;
-}
-
-footer {
-    clear: both;
-    text-align: center;
-    color: #666666;
-    font-size: 0.85em;
+a {
+    color: #369;
+    text-decoration: none;
 }
 
 code {
     font-size: 1.1em;
-}
-
-a {
-    color: #4a5d75;
-    text-decoration: none;
 }
 
 a:hover {
@@ -94,27 +41,38 @@ a:hover {
     text-decoration: underline;
 }
 
-h1 {
-    color: #243446;
-    font-size: 2.25em;
-    margin: 0 0 10px 0;
+legend {
+    color: #111111;
+    font-weight: bold;
 }
 
-h2 {
-    font-size: 1em;
+article > div.ui-content {
+    /* Center the content */
+    margin: 0 auto;
 }
 
-h3 {
-    color: #243446;
+article .wrap {
+    /* Set a background and border for the content to set it apart */
+    background: #cccccc;
+    border: 1px solid #aaaaaa;
+    border-radius: 8px;
+    /* Set padding so the edges are flush */
+    padding: 1em;
+    /* Set word wrap properties to break long text into separate lines */
+    word-break: break-all;
+    white-space: normal;
 }
 
-h4 {
+.mobileicon {
+    padding: 10px;
 }
 
-h5 {
-}
+/* Header and footer styles */
 
-h6 {
+.header_logo{
+    float: left;
+    margin-top: 3px;
+    margin-left: 8px;
 }
 
 /* Member registration styles */
@@ -123,151 +81,111 @@ span.invalid {
     color: red;
 }
 
-fieldset {
-    padding: 1em;
-    font: 80%/1 sans-serif;
-    width: 375px;
-    border: 1px solid #D5D5D5;
+span.success {
+   padding-left: 3px;
+   color: green;
 }
 
-label {
-    float: left;
-    width: 15%;
-    margin-left: 20px;
-    margin-right: 0.5em;
-    padding-top: 0.2em;
-    text-align: right;
-    font-weight: bold;
-    color: #363636;
-}
-
-input {
-    margin-bottom: 8px;
-}
-
-legend {
-    padding: 0.2em 0.5em;
-    color: #4a5d75;
-    font-size: 1.5em;
-}
-
-#register {
-    float: left;
-    margin-left: 85px;
-}
-
-/* Member table styles */
-#mem_tbl {
-    background-color: #E6E7E8;
+.member-foot {
     clear: both;
-    width: 550px;
-}
-
-#mem_tbl td {
     height: 2em;
-    padding-left: 6px;
-    font-size: 11px;
-}
-
-#mem_tbl th {
-    font-size: 12px;
-    font-weight: normal;
-    padding: 0 10px 0 5px;
-    border-bottom: #999999 dotted 1px;
-}
-
-#mem_tbl thead {
-    height: 31px;
-    font-size: 10px;
     font-weight: bold;
-    color: #FFFFFF;
-    background-color: black;
-    text-align: left;
+    padding-top: 3em;
 }
 
-#mem_tbl tfoot {
-    height: 20px;
-    font-size: 10px;
-    font-weight: bold;
-    background-color: #EAECEE;
-    text-align: center;
+#member-art .ui-content .ui-btn {
+    float: right;
 }
 
-/* Using new CSS3 selectors for styling*/
-#members tr:nth-child(odd) {
-    background: #f4f3f3;
+#refreshButton {
+    margin-top: 4em;
 }
 
-#members tr:nth-child(even) {
-    background: #ffffff;
+/* Invert the color scheme for the persistent navbar to match iOS guidelines */
+div[data-role="navbar"] a.ui-link.ui-btn-active {
+    color: #3388cc;
+    background-color: #fff;
+    border-color: rgb(221,221,221);
+}
+div[data-role="navbar"] a.ui-link.ui-btn-active:after {
+    color: #3388cc;
+    background-color: #3388cc;
 }
 
-/* Hide Mobile Site Elements */
-.header, .footer, .mobileicon {
-    display: none;
+/* Decrease margins applied on headers */
+.ui-header .ui-title {
+    margin-left: 10%;
+    margin-right: 10%;
 }
 
-/*  -----  table style  -------  */
-
-/*  = Simple Table style (black header, grey/white stripes  */
-
-.simpletablestyle {
-    background-color: #E6E7E8;
-    clear: both;
+.app-responsive .ui-block-a,
+.app-responsive .ui-block-b,
+.app-responsive .ui-block-c,
+.app-responsive .ui-block-d,
+.app-responsive .ui-block-e {
+    width: 100%;
+    float:none;
 }
 
-.simpletablestyle img {
-    border: 0;
+/* preset breakpoint to switch to stacked grid styles and responsive tables below 40em (640px) */
+@media all and (min-width: 40em) {
+    .app-responsive .ui-block-a,
+    .app-responsive .ui-block-b,
+    .app-responsive .ui-block-c,
+    .app-responsive .ui-block-d,
+    .app-responsive .ui-block-e {
+        width: 49.95%;
+        float:left;
+    }
+
+    /* Show the table header rows and set all cells to display: table-cell */
+    .app-responsive td,
+    .app-responsive th,
+    .app-responsive tbody th,
+    .app-responsive tbody td,
+    .app-responsive thead td,
+    .app-responsive thead th {
+        display: table-cell;
+        margin: 0;
+        white-space: pre-wrap;
+        word-break: break-all;
+        word-break: break-word;
+    }
+    /* Hide the labels in each cell */
+    .app-responsive td .ui-table-cell-label,
+    .app-responsive th .ui-table-cell-label {
+        display: none;
+    }
+
+    article > div.ui-content {
+        /* Set a max-width */
+        max-width: 38em;
+    }
+    article .wrap {
+        /* Adding padding */
+        padding: 1em;
+    }
 }
 
-.simpletablestyle td {
-    height: 3em;
-    font-size: 11px;
-    padding: 5px 5px 5px 6px;
+/* Set a larger max-width and add more padding as the display size increases. */
+@media all and (min-width: 50em) {
+    article > div.ui-content {
+        /* Set a max-width */
+        max-width: 46em;
+    }
+    article .wrap {
+        /* Adding padding */
+        padding: 2em;
+    }
 }
 
-.simpletablestyle th {
-    font-size: 12px;
-    font-weight: normal;
-    padding: 0 10px 0 5px;
-    border-bottom: #999999 dotted 1px;
-}
-
-.simpletablestyle thead {
-    background: url(../img/bkg-blkheader.png) #000000 repeat-x top left;
-    height: 31px;
-    font-size: 10px;
-    font-weight: bold;
-    color: #FFFFFF;
-    text-align: left;
-}
-
-.simpletablestyle .header a {
-    color: #94aebd;
-}
-
-.simpletablestyle tr.header td {
-    padding: 0px 10px 0px 5px;
-}
-
-.simpletablestyle .subheader {
-    background-color: #e6e7e8;
-    font-size: 10px;
-    font-weight: bold;
-    color: #000000;
-    text-align: left;
-}
-
-.simpletablestyle .oddRow {
-    background-color: #f4f3f3;
-    padding-left: 6px;
-}
-
-.simpletablestyle .evenRow {
-    background-color: #ffffff;
-}
-
-.simpletablestyle td a:hover {
-    color: #3883ce;
-    text-decoration: none;
+@media all and (min-width: 60em) {
+    article > div.ui-content {
+        /* Set a max-width */
+        max-width: 54em;
+    }
+    article .wrap {
+        /* Adding padding */
+        padding: 3em;
+    }
 }

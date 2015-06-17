@@ -2,14 +2,21 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+    
+    <parent>
+        <groupId>org.jboss</groupId>
+        <artifactId>jboss-parent</artifactId>
+        <version>19</version>
+    </parent>
+    
 
-    <groupId>org.jboss.archetype.wfk</groupId>
+    <groupId>org.jboss.archetype.eap</groupId>
     <artifactId>jboss-spring-mvc-archetype</artifactId>
-    <version>2.7.0.Final</version>
+    <version>7.0.0-build-SNAPSHOT</version>
     <packaging>maven-archetype</packaging>
 
     <name>Spring MVC Application</name>
-   <description>An archetype that generates a starter Spring MVC application with Java EE persistence settings (server bootstrapped JPA, JTA transaction management) for JBoss AS7</description>
+   <description>An archetype that generates a starter Spring MVC application with Java EE persistence settings (server bootstrapped JPA, JTA transaction management) for EAP 7</description>
    
     <url>http://jboss.org/jbossas</url>
 
@@ -31,6 +38,15 @@
             <email>kpiwko@redhat.com</email>
             <organization>Red Hat, Inc.</organization>
             <organizationUrl>http://redhat.com/jboss</organizationUrl>
+        </developer>
+        <developer>
+            <id>rafabene</id>
+            <name>Rafael Benevides</name>
+            <email>benevides@redhat.com</email>
+            <organization>Red Hat, Inc.</organization>
+            <organizationUrl>http://redhat.com/jboss</organizationUrl>
+            <url>https://community.jboss.org/people/rafabene</url>
+            <timezone>-4</timezone>
         </developer>
     </developers>
     
@@ -54,7 +70,7 @@
             <extension>
                 <groupId>org.apache.maven.archetype</groupId>
                 <artifactId>archetype-packaging</artifactId>
-                <version>2.1</version>
+                <version>2.3</version>
             </extension>
         </extensions>
 
@@ -62,7 +78,7 @@
             <plugins>
                 <plugin>
                     <artifactId>maven-archetype-plugin</artifactId>
-                    <version>2.2</version>
+                    <version>2.3</version>
                 </plugin>
             </plugins>
         </pluginManagement>
@@ -94,7 +110,7 @@
                     <plugin>
                         <groupId>org.jboss.maven.plugins</groupId>
                         <artifactId>qstools</artifactId>
-                        <version>1.5.3.Final</version>
+                        <version>1.6.1.Final</version>
                         <configuration>
                             <projectGitRepo>git://github.com/jboss-developer/jboss-wfk-quickstarts</projectGitRepo>
                             <projectPath>spring-kitchensink-basic</projectPath>
