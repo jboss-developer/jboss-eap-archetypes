@@ -8,7 +8,7 @@ DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
 
 # DEFINE
 
-ARCHETYPES="jboss-javaee6-webapp-archetype jboss-javaee6-webapp-ear-archetype jboss-html5-mobile-archetype"
+ARCHETYPES="jboss-javaee7-webapp-archetype jboss-javaee7-webapp-ear-archetype jboss-html5-mobile-archetype"
 
 # SCRIPT
 

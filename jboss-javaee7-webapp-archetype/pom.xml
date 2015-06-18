@@ -18,7 +18,7 @@
 
     <description>An archetype that generates a starter Java EE 7 webapp project for JBoss EAP 7</description>
 
-    <url>http://jboss.org/jbossas</url>
+    <url>http://www.jboss.org/products/eap</url>
 
     <developers>
         <developer>

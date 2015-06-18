@@ -18,7 +18,7 @@
     <name>Spring MVC Application</name>
    <description>An archetype that generates a starter Spring MVC application with Java EE persistence settings (server bootstrapped JPA, JTA transaction management) for EAP 7</description>
    
-    <url>http://jboss.org/jbossas</url>
+    <url>http://www.jboss.org/products/eap</url>
 
     <scm>
         <connection>scm:git:git@github.com:jboss-eap/wfk-archetypes.git</connection>

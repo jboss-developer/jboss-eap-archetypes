@@ -18,7 +18,7 @@
 
    <description>An archetype that generates a Java EE 7 application using HTML5, and JAX-RS to support both desktop and mobile web browsers</description>
 
-   <url>http://jboss.org/jbossas</url>
+   <url>http://www.jboss.org/products/eap</url>
 
    <developers>
       <developer>
