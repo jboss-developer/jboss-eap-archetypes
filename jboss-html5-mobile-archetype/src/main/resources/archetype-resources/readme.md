@@ -4,14 +4,13 @@ Author: Jay Balunas
 Level: Beginner   
 Technologies: CDI, HTML5, REST  
 Summary: The `${artifactId}` quickstart is based on `${artifactId}`, but uses HTML5 and jQuery Mobile, making it suitable for mobile and tablet computers.  
-Target Product: WFK  
-Product Versions: EAP 6.1, EAP 6.2, EAP 6.3, WFK 2.7  
-Source: <https://github.com/jboss-developer/jboss-wfk-quickstarts>  
+Target Product: JBoss EAP
+Source: <https://github.com/jboss-developer/jboss-eap-quickstarts>
 
 What is it?
 -----------
 
-The `${artifactId}` quickstart is based on the `${artifactId}` quickstart and demonstrates a Java EE 6 mobile database application using HTML5, jQuery Mobile, JAX-RS, JPA 2.0, and REST.
+The `${artifactId}` quickstart is based on the `${artifactId}` quickstart and demonstrates a Java EE 7 mobile database application using HTML5, jQuery Mobile, JAX-RS, JPA, and REST in Red Hat JBoss Enterprise Application Platform.
 
 This application is built using a HTML5 + REST approach.  This uses a pure HTML client that interacts with the application server via restful end-points (JAX-RS).  This application also uses some of the latest HTML5 features and advanced JAX-RS. And since testing is just as important with client side as it is server side, this application uses QUnit to show you how to unit test your JavaScript.
 
@@ -20,9 +19,9 @@ What is a modern web application without mobile web support? This application al
 System requirements
 -------------------
 
-The application this project produces is designed to be run on Red Hat JBoss Enterprise Application Platform (EAP) 6.1 or later with the  Red Hat JBoss Web Framework Kit (WFK) 2.7.
+The application this project produces is designed to be run on Red Hat JBoss Enterprise Application Platform (JBoss EAP) 7 or later.
 
-All you need to build this project is Java 6.0 (Java SDK 1.6) or later, Maven 3.0 or later.
+All you need to build this project is Java 8.0 (Java SDK 1.8) or later, Maven 3.0 or later.
 
 An HTML5 compatible browser such as Chrome, Safari 5+, Firefox 5+, or IE 9+ are required. and note that some behaviors will vary slightly (ex. validations) based on browser support, especially IE 9.
 
@@ -34,7 +33,7 @@ With the prerequisites out of the way, you're ready to build and deploy.
 Configure Maven
 ---------------
 
-If you have not yet done so, you must [Configure Maven](../README.md#configure-maven) before testing the quickstarts.
+If you have not yet done so, you must [Configure Maven](https://github.com/jboss-developer/jboss-developer-shared-resources/blob/master/guides/CONFIGURE_MAVEN.md#configure-maven-to-build-and-deploy-the-quickstarts) before testing the quickstarts.
 
 
 Start the JBoss EAP Server
@@ -61,7 +60,7 @@ Build and Deploy the Quickstart
 2. Open a command line and navigate to the root directory of this quickstart.
 3. Type this command to build and deploy the archive:
 
-        mvn clean jboss-as:deploy
+        mvn clean wildfly:deploy
 
 4. This deploys `target/${artifactId}.war` to the running instance of the server.
 
@@ -79,13 +78,13 @@ Undeploy the Archive
 2. Open a command line and navigate to the root directory of this quickstart.
 3. When you are finished testing, type this command to undeploy the archive:
 
-        mvn jboss-as:undeploy
+        mvn wildfly:undeploy
 
 
-Run the Quickstart in JBoss Developer Studio or Eclipse
+Run the Quickstart in Red Hat JBoss Developer Studio or Eclipse
 -------------------------------------
+You can also start the server and deploy the quickstarts or run the Arquillian tests from Eclipse using JBoss tools. For more information, see [Use JBoss Developer Studio or Eclipse to Run the Quickstarts](https://github.com/jboss-developer/jboss-developer-shared-resources/blob/master/guides/USE_JBDS.md#use-jboss-developer-studio-or-eclipse-to-run-the-quickstarts) 
 
-You can also start the server and deploy the quickstarts from Eclipse using JBoss tools. For more information, see [Use JBoss Developer Studio or Eclipse to Run the Quickstarts](../README.md#use-jboss-developer-studio-or-eclipse-to-run-the-quickstarts) 
 
 
 Build and Deploy the Quickstart - to OpenShift
@@ -109,12 +108,12 @@ NOTE: By default there are turn off tests so you must use the arquillian test pr
 For example:
 
     #No Tests
-    mvn clean jboss-as:deploy -Pminify
+    mvn clean wildfly:deploy -Pminify
 
 OR
 
     #With Tests
-    mvn clean jboss-as:deploy -Pminify,arq-jbossas-remote
+    mvn clean wildfly:deploy -Pminify,arq-wildfly-remote
  
 Run the Arquillian tests
 -------------------------------------
@@ -123,7 +122,7 @@ By default, tests are configured to be skipped. The reason is that the sample te
 
 To run the test in JBoss, first start the container instance. Then, run the test goal with the following profile activated:
 
-    mvn clean test -Parq-jbossas-remote
+    mvn clean test -Parq-wildfly-remote
 
 Run the QUnit tests
 -------------------------------------

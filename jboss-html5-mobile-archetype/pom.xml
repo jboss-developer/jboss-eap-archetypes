@@ -97,21 +97,18 @@
                            <artifactId>qstools</artifactId>
                            <version>1.6.1.Final</version>
                            <configuration>
-                               <projectGitRepo>https://github.com/jboss-developer/jboss-wfk-quickstarts.git</projectGitRepo>
+                               <projectGitRepo>https://github.com/jboss-developer/jboss-eap-quickstarts.git</projectGitRepo>
                                <projectPath>kitchensink-html5-mobile</projectPath>
                                <rootPackage>org.jboss.as.quickstarts.html5_mobile</rootPackage>
-                               <branch>12d82ed82656d1f5a17c679d3e38e3234692107d</branch>
+                               <branch>7.0.x-develop</branch>
                                <replaceValueWithExpression>
                                    <html5mobi>tableSuffix</html5mobi>
                                </replaceValueWithExpression>
                                <applyPatch>cheatsheet.diff</applyPatch>;
-                               <ignoredArchetypeExpressionReplaceValues>
-                                   <ignoredArchetypeExpressionReplaceValue>http://www.jboss.org/jdf/quickstarts/jboss-as-quickstart/wfk-quickstarts/</ignoredArchetypeExpressionReplaceValue>
-                               </ignoredArchetypeExpressionReplaceValues>
                                <archetypeExpressionReplaceValues>
                                    <archetypeExpressionReplaceValue>jboss-as-kitchensink-html5-mobile</archetypeExpressionReplaceValue>
                                    <archetypeExpressionReplaceValue>jboss-kitchensink-html5-mobile</archetypeExpressionReplaceValue>
-                                   <archetypeExpressionReplaceValue>JBoss WFK Quickstart: kitchensink-html5-mobile</archetypeExpressionReplaceValue>
+                                   <archetypeExpressionReplaceValue>JBoss EAP Quickstart: kitchensink-html5-mobile</archetypeExpressionReplaceValue>
                                    <archetypeExpressionReplaceValue>KitchensinkHTML5MobileQuickstart</archetypeExpressionReplaceValue>
                                    <archetypeExpressionReplaceValue>KitchensinkHTML5Mobile</archetypeExpressionReplaceValue>
                                    <archetypeExpressionReplaceValue>kitchensink-html5-mobile-quickstart</archetypeExpressionReplaceValue>
