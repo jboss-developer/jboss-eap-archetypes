@@ -3,15 +3,14 @@ ${artifactId}: Kitchensink Example using Spring 4.x
 Author: Marius Bogoevici, Tejas Mehta, Joshua Wilson  
 Level: Intermediate  
 Technologies: JSP, JPA, JSON, Spring, JUnit  
-Summary: The `${artifactId}` quickstart is an example of a Java EE 6 application using JSP, JPA 2.0 and Spring 4.x.  
-Target Product: WFK  
-Product Versions: EAP 6.1, EAP 6.2, EAP 6.3, WFK 2.7  
-Source: <https://github.com/jboss-developer/jboss-wfk-quickstarts/>  
+Summary: The `${artifactId}` quickstart is an example of a Java EE 7 application using JSP, JPA and Spring 4.x.  
+Target Product: JBoss EAP  
+Source: <https://github.com/jboss-developer/jboss-eap-quickstarts/>  
 
 What is it?
 -----------
 
-The `${artifactId}` quickstart is an example of a Java EE 6 application using JSP, JPA 2.0 and Spring 4.x. It 
+The `${artifactId}` quickstart is an example of a Java EE 7 application using JSP, JPA and Spring 4.x in Red Hat JBoss Enterprise Application Platform. It 
 includes a persistence unit and some sample persistence and transaction code to introduce you to database access in enterprise Java:
 
 * In `jboss-as-spring-mvc-context.xml` `<context:component-scan base-package="${package}.controller"/>` 
@@ -27,30 +26,15 @@ and `<mvc:annotation-driven/>` are used to register both the non-rest and rest c
 System Requirements
 -------------------
 
-The application this project produces is designed to be run on Red Hat JBoss Enterprise Application Platform (EAP) 6.1 or 
-later with the Red Hat JBoss Web Framework Kit (WFK) 2.7.
+The application this project produces is designed to be run on Red Hat JBoss Enterprise Application Platform 7 or later. 
 
-To run the quickstart with the provided build script, you need the following:
-
-1. Java 1.6, to run JBoss and Maven. You can choose from the following:
-    * OpenJDK
-    * Oracle Java SE
-    * Oracle JRockit
-
-2. Maven 3.0.0 or later, to build and deploy the examples
-    * If you have not yet installed Maven, see the [Maven Getting Started Guide](http://maven.apache.org/guides/getting-started/index.html) for details.
-    * If you have installed Maven, you can check the version by typing the following in a command line:
-
-            mvn --version 
-
-3. The JBoss EAP distribution ZIP.
-    * For information on how to install and run JBoss, refer to the product documentation.
+All you need to build this project is Java 8.0 (Java SDK 1.8) or later, Maven 3.0 or later.
 
 
 Configure Maven
 ---------------
 
-If you have not yet done so, you must [Configure Maven](../README.md#configure-maven) before testing the quickstarts.
+If you have not yet done so, you must [Configure Maven](https://github.com/jboss-developer/jboss-developer-shared-resources/blob/master/guides/CONFIGURE_MAVEN.md#configure-maven-to-build-and-deploy-the-quickstarts) before testing the quickstarts.
 
 
 Start the JBoss EAP Server
@@ -66,15 +50,11 @@ Start the JBoss EAP Server
 Build and Deploy the Quickstart
 -------------------------
 
-_NOTE: The following build command assumes you have configured your Maven user settings. If you have not, you must include 
-Maven setting arguments on the command line. See [Build and Deploy the Quickstarts](../README.md#build-and-deploy-the-quickstarts) 
-for complete instructions and additional options._
-
 1. Make sure you have started the JBoss EAP server as described above.
 2. Open a command line and navigate to the root directory of this quickstart.
 3. Type this command to build and deploy the archive:
 
-        mvn clean install jboss-as:deploy
+        mvn clean install wildfly:deploy
 
 4. This will deploy `target/${artifactId}.war` to the running instance of the server.
 
@@ -92,7 +72,7 @@ Undeploy the Archive
 2. Open a command line and navigate to the root directory of this quickstart.
 3. When you are finished testing, type this command to undeploy the archive:
 
-        mvn jboss-as:undeploy
+        mvn wildfly:undeploy
 
 
 Run the Arquillian Functional Tests
@@ -112,19 +92,17 @@ To run these tests, you must build the main project as described above.
 3. Navigate to the functional-tests/ directory in this quickstart.
 4. If you have a running instance of the JBoss EAP server, as described above, run the remote tests by typing the following command:
 
-        mvn clean verify -Parq-jbossas-remote
+        mvn clean verify -Parq-wildfly-remote
 
 5. If you prefer to run the functional tests using managed instance of the JBoss EAP server, meaning the tests will start the 
 server for you, type the following command:
 
-        mvn clean verify -Parq-jbossas-managed
+        mvn clean verify -Parq-wildfly-managed
 
 
-Run the Quickstart in JBoss Developer Studio or Eclipse
+Run the Quickstart in Red Hat JBoss Developer Studio or Eclipse
 -------------------------------------
-
-You can also start the server and deploy the quickstart from Eclipse using JBoss tools. For more information, see 
-[Use JBoss Developer Studio or Eclipse to Run the Quickstart](../README.md#use-jboss-developer-studio-or-eclipse-to-run-the-quickstarts)
+You can also start the server and deploy the quickstarts or run the Arquillian tests from Eclipse using JBoss tools. For more information, see [Use JBoss Developer Studio or Eclipse to Run the Quickstarts](https://github.com/jboss-developer/jboss-developer-shared-resources/blob/master/guides/USE_JBDS.md#use-jboss-developer-studio-or-eclipse-to-run-the-quickstarts) 
 
 
 Debug the Application

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
     JBoss, Home of Professional Open Source
-    Copyright 2014, Red Hat, Inc. and/or its affiliates, and individual
+    Copyright 2015, Red Hat, Inc. and/or its affiliates, and individual
     contributors by the @authors tag. See the copyright.txt in the
     distribution for a full listing of individual contributors.
 
@@ -21,10 +21,10 @@
     <groupId>${groupId}</groupId>
     <artifactId>${artifactId}</artifactId>
     <version>${version}</version>
-    <name>JBoss AS Quickstarts: Kitchensink test via WebDriver with Arquillian</name>
-    <description>This project tests a starter Java EE 6 webapp project for use on JBoss AS 7 / EAP 6 by WebDriver</description>
+    <name>JBoss EAP Quickstarts: Kitchensink test via WebDriver with Arquillian</name>
+    <description>This project tests a starter Java EE webapp project for use on JBoss EAP by WebDriver</description>
 
-    <url>http://jboss.org/jbossas</url>
+    <url>http://www.jboss.org/products/eap</url>
     <licenses>
         <license>
             <name>Apache License, Version 2.0</name>
@@ -44,17 +44,17 @@
         <m2e.cdi.activation>false</m2e.cdi.activation>
 
         <!-- JBoss dependency versions -->
-        <version.jboss.maven.plugin>7.4.Final</version.jboss.maven.plugin>
+        <version.wildfly.maven.plugin>1.0.2.Final</version.wildfly.maven.plugin>
 
         <!-- Define the version of the JBoss BOMs we want to import. The JBoss BOMs specify tested stacks. -->
-        <version.jboss.bom.wfk>2.7.0-redhat-1</version.jboss.bom.wfk>
+        <version.jboss.bom.eap>6.3.2.GA</version.jboss.bom.eap>
 
-        <!-- other plugin versions -->
+        <!-- other plug-in versions -->
         <version.surefire.plugin>2.10</version.surefire.plugin>
 
         <!-- maven-compiler-plugin -->
-        <maven.compiler.target>1.6</maven.compiler.target>
-        <maven.compiler.source>1.6</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.compiler.source>1.8</maven.compiler.source>
     </properties>
 
     <build>
@@ -70,10 +70,19 @@
     <dependencyManagement>
         <dependencies>
             <!-- Arquillian dependency -->
+            <!-- Define the version of the JBoss Java EE APIs we want to import.
+                 Any dependencies from org.jboss.spec will have their version defined by this BOM
+
+                 JBoss distributes a complete set of Java EE APIs including
+                 a Bill of Materials (BOM). A BOM specifies the versions of a "stack" (or
+                 a collection) of artifacts. We use this here so that we always get the correct
+                 versions of artifacts. Here we use the jboss-javaee-6.0 stack (you can
+                 read this as the JBoss stack of the Java EE APIs). You can actually
+                 use this stack with any version of JBoss EAP that implements Java EE. -->
             <dependency>
-                <groupId>org.jboss.bom.wfk</groupId>
-                <artifactId>jboss-javaee-6.0-with-tools</artifactId>
-                <version>${version.jboss.bom.wfk}</version>
+                <groupId>org.jboss.bom</groupId>
+                <artifactId>jboss-javaee-7.0-eap-with-tools</artifactId>
+                <version>${version.jboss.bom.eap}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -117,24 +126,24 @@
 
     <profiles>
         <profile>
-            <!-- Profile that executes tests in managed JBoss AS instance. -->
-            <id>arq-jbossas-managed</id>
+            <!-- Profile that executes tests in managed JBoss EAP instance. -->
+            <id>arq-wildfly-managed</id>
             <dependencies>
                 <dependency>
-                    <groupId>org.jboss.as</groupId>
-                    <artifactId>jboss-as-arquillian-container-managed</artifactId>
+                    <groupId>org.wildfly.arquillian</groupId>
+                    <artifactId>wildfly-arquillian-container-managed</artifactId>
                     <scope>test</scope>
                 </dependency>
             </dependencies>
         </profile>
 
         <profile>
-            <!-- Profile that executes tests in remote JBoss AS instance. -->
-            <id>arq-jbossas-remote</id>
+            <!-- Profile that executes tests in remote JBoss EAP instance. -->
+            <id>arq-wildfly-remote</id>
             <dependencies>
                 <dependency>
-                    <groupId>org.jboss.as</groupId>
-                    <artifactId>jboss-as-arquillian-container-remote</artifactId>
+                    <groupId>org.wildfly.arquillian</groupId>
+                    <artifactId>wildfly-arquillian-container-remote</artifactId>
                     <scope>test</scope>
                 </dependency>
             </dependencies>

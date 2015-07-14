@@ -112,14 +112,14 @@
                         <artifactId>qstools</artifactId>
                         <version>1.6.1.Final</version>
                         <configuration>
-                            <projectGitRepo>git://github.com/jboss-developer/jboss-wfk-quickstarts</projectGitRepo>
+                            <projectGitRepo>git://github.com/jboss-developer/jboss-eap-quickstarts</projectGitRepo>
                             <projectPath>spring-kitchensink-basic</projectPath>
                             <rootPackage>org.jboss.as.quickstarts.kitchensink.spring.basic</rootPackage>
-                            <branch>3b63ce3a7a3dfddd9b1456a73f6a5c8b2c83e9de</branch>
+                            <branch>7.0.x-develop</branch>
                             <archetypeExpressionReplaceValues>
                                 <archetypeExpressionReplaceValue>jboss-spring-kitchensink-basic</archetypeExpressionReplaceValue>
                                 <archetypeExpressionReplaceValue>spring-kitchensink-basic</archetypeExpressionReplaceValue>
-                                <archetypeExpressionReplaceValue>JBoss WFK Quickstart: spring-kitchensink-basic</archetypeExpressionReplaceValue>
+                                <archetypeExpressionReplaceValue>JBoss EAP Quickstart: spring-kitchensink-basic</archetypeExpressionReplaceValue>
                                 <archetypeExpressionReplaceValue>spring-quickstart</archetypeExpressionReplaceValue>
                                 <archetypeExpressionReplaceValue>kitchensink-quickstart</archetypeExpressionReplaceValue>
                                 <archetypeExpressionReplaceValue>SpringQuickstart</archetypeExpressionReplaceValue>
